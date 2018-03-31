@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         // TODO (4) Use the static ToyBox.getToyNames method and store the names in a String array
         // in der klasse ToyBox gibt es eine methode die ein stringarray liefert
+        // ---- in dem die viele spiele aufgelistet sind
         // dieses legen wir in einem lokalen array ab
         String[] toyNames = ToyBox.getToyNames();
         // TODO (5) Loop through each toy and append the name to the TextView (add \n for spacing)

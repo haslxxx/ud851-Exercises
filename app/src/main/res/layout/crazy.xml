@@ -1,0 +1,48 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e0414141"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:adjustViewBounds="false"
+        android:fitsSystemWindows="false"
+        android:scaleType="fitCenter"
+        android:src="@drawable/verrueckterhund" />
+
+
+    <TextView
+        android:text="ANDROID  is driving me"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:textSize="28sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@android:color/white"
+        android:layout_margin="20dp"
+        />
+    <TextView
+        android:text="CRAZY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:textSize="38sp"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@android:color/white"
+        android:layout_margin="20dp"
+
+        />
+
+
+</RelativeLayout>

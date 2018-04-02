@@ -15,10 +15,17 @@
  */
 package com.example.android.datafrominternet;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import static com.example.android.datafrominternet.R.*;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,31 +38,48 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(layout.activity_main);
 
-        mSearchBoxEditText = (EditText) findViewById(R.id.et_search_box);
+        mSearchBoxEditText = (EditText) findViewById(id.et_search_box);
 
-        mUrlDisplayTextView = (TextView) findViewById(R.id.tv_url_display);
-        mSearchResultsTextView = (TextView) findViewById(R.id.tv_github_search_results_json);
+        mUrlDisplayTextView = (TextView) findViewById(id.tv_url_display);
+        mSearchResultsTextView = (TextView) findViewById(id.tv_github_search_results_json);
     }
 
     // Do 2 - 7 in menu.xml ///////////////////////////////////////////////////////////////////////
-    // TODO (2) Create a menu xml called 'main.xml' in the res->menu folder
-    // TODO (3) Add one menu item to your menu
-    // TODO (4) Give the menu item an id of @+id/action_search
-    // TODO (5) Set the orderInCategory to 1
-    // TODO (6) Show this item if there is room (use app:showAsAction, not android:showAsAction)
-    // TODO (7) Set the title to the search string ("Search") from strings.xml
+    // TODOn (2) Create a menu xml called 'main.xml' in the res->menu folder
+    // TODOn (3) Add one menu item to your menu
+    // TODOn (4) Give the menu item an id of @+id/action_search
+    // TODOn (5) Set the orderInCategory to 1
+    // TODOn (6) Show this item if there is room (use app:showAsAction, not android:showAsAction)
+    // TODOn (7) Set the title to the search string ("Search") from strings.xml
     // Do 2 - 7 in menu.xml ///////////////////////////////////////////////////////////////////////
 
 
     // TODO (8) Override onCreateOptionsMenu
     // TODO (9) Within onCreateOptionsMenu, use getMenuInflater().inflate to inflate the menu
     // TODO (10) Return true to display your menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu myMenu){
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(layout.activity_main,  myMenu);
+        return true;
+    }
 
     // TODO (11) Override onOptionsItemSelected
     // TODO (12) Within onOptionsItemSelected, get the ID of the item that was selected
     // TODO (13) If the item's ID is R.id.action_search, show a Toast and return true to tell Android that you've handled this menu click
     // TODO (14) Don't forgot to call .show() on your Toast
     // TODO (15) If you do NOT handle the menu click, return super.onOptionsItemSelected to let Android handle the menu click
+    @Override
+    public boolean onOptionsItemSelected(MenuItem myMenuItem) {
+
+        int myItemID = myMenuItem.getItemId();
+        if (myItemID == R.id.action_search) {
+            Toast.makeText(layout.activity_main.this, "Ja, du hast es geschafft",
+                    Toast.LENGTH_LONG).show();;
+            return true;
+        } else return super.onOptionsItemSelected();
+
+    }
 }

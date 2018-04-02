@@ -16,6 +16,7 @@
 package com.example.android.datafrominternet;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_main);
+        setContentView(R.layout.activity_main);
 
         mSearchBoxEditText = (EditText) findViewById(id.et_search_box);
 
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu myMenu){
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(layout.activity_main,  myMenu);
+        inflater.inflate(R.menu.menu,  myMenu);
         return true;
     }
 
@@ -76,10 +77,13 @@ public class MainActivity extends AppCompatActivity {
 
         int myItemID = myMenuItem.getItemId();
         if (myItemID == R.id.action_search) {
-            Toast.makeText(layout.activity_main.this, "Ja, du hast es geschafft",
-                    Toast.LENGTH_LONG).show();;
+            Context context = MainActivity.this;
+            String textToShow = "Du hast Search geclickt";
+
+            Toast.makeText(context, textToShow, Toast.LENGTH_SHORT).show();
             return true;
-        } else return super.onOptionsItemSelected();
+        }
+        return super.onOptionsItemSelected(myMenuItem);
 
     }
 }
